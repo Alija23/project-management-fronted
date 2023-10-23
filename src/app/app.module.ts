@@ -3,23 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminModule } from './admin/admin.module';
-import { UserModule } from './user/user.module';
-import { GuestModule } from './guest/guest.module';
 import { TestComponent } from './test/test/test.component';
+import { NotFoundComponent } from './page-not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    GuestModule,
-    UserModule,
-    AdminModule,
-    AppRoutingModule
+    AppRoutingModule,
 
   ],
   providers: [],

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PublicServiceService } from './public-service.service';
+import { PublicService } from './public.service';
 
 describe('PublicServiceService', () => {
-  let service: PublicServiceService;
+  let service: PublicService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PublicServiceService);
+    service = TestBed.inject(PublicService);
   });
 
   it('should be created', () => {

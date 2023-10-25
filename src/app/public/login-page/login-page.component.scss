@@ -1,0 +1,183 @@
+.login-page {
+
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .background {
+        position: absolute;
+        background-image: url("../../../assets/images/project-managment.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; 
+        background-color: gray;
+        background-blend-mode: multiply;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        filter: blur(1px);
+        z-index: -1;
+        
+    }
+ 
+
+   .login-form {
+        width: 45vw;
+        height: 80vh;
+        margin-left: 20px;
+        @media (max-width: 1200px) {
+            .login-form {
+                position: absolute;
+                left: 0;
+            }
+        }         
+    }
+
+    .register {
+        width: 45vw;
+        height:75vh;
+        margin-right: 20px;
+        color: white;
+        display: flex;
+        justify-content: center; 
+        backdrop-filter: blur(10px); 
+        flex-wrap: wrap;
+        font-family: Arial, Helvetica, sans-serif; 
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+        border: 1px solid grey;
+        border-radius: 10px;
+
+        @media (max-width: 1600px) {
+            width: 30vw;
+        }
+         @media (max-width: 1200px) {
+            width: 25vw;
+            margin-right: 0;
+            justify-content: flex-start;
+        }       
+        .text-1 {
+            width: 100vw; 
+            margin-top: 5px;
+            h1 {
+                font-size: 3.5rem; 
+                margin: auto;
+                text-align: center;
+                letter-spacing: 3px;
+                @media (max-width: 1600px) {
+                        font-size: 3rem;
+                }
+                @media (max-width: 1200px) {
+                
+                    font-size: 2rem;
+                }
+        
+            }
+        }
+
+        .text-2 {
+            width: 100vw;
+            h2 {
+                letter-spacing: 3px;
+                margin: auto;
+                font-size: 2.4rem;
+                text-align: center;
+                @media (max-width: 1600px) {
+                        font-size: 1.8rem;
+                }
+                @media (max-width: 1200px) {
+                
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        .text-3 {
+            width: 100vw;
+            p {
+                margin: auto; 
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+                text-align: center;
+                @media (max-width: 1600px) {
+                        font-size: 1rem;
+                }
+                @media (max-width: 1200px) {
+                
+                    font-size: 0.8rem;
+                }
+            }
+            
+        }
+        
+        
+        
+        .button {
+        width: 100%;
+        display: flex;
+        margin-bottom: 40px;
+        button {
+            display: inline-block;
+            padding: .75rem 1.25rem;
+            border: 3px solid black;
+            border-radius: 1rem;
+            color: white;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: .15rem;
+            transition: all .3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            width: 30%;
+            margin: auto;
+            background-color: red;
+            @media (max-width: 1600px) {
+                letter-spacing: none;
+                font-size: 0.7rem;
+                margin: none;
+                padding: none;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                border-radius: 10rem;
+                z-index: -2;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                background-color: darken(white, 15%);
+                transition: all .3s;
+                border-radius: 10rem;
+                z-index: -1;
+            }
+            &:hover {
+                color: black;
+                font-weight: 500;
+                &:before {
+                width: 100%;
+                }
+            }
+            &:active {
+                background-color: darken(blue, 15%);
+                padding: 10px;
+            }
+        }  
+    }
+} 
+}

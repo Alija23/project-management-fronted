@@ -1,0 +1,18 @@
+<div class="login-form">
+    <div class="header">Login</div> 
+    <div class="form-data"> 
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="username">
+            <label for="username"></label> 
+            <input type="text" id="username" name="username" placeholder="Enter Your Username" [(ngModel)]="loginFormsModel.username" minlength="2" required>
+          </div>
+          <div class="password">
+            <label for="password"></label>
+            <input type="password" placeholder="Enter Your Password" name="password" [(ngModel)]="loginFormsModel.password" minlength="2" required>
+          </div>
+          <div class="button">
+            <button type="submit">Submit</button>
+          </div>
+          </form>
+    </div>
+</div>

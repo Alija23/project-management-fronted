@@ -8,7 +8,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-
+    
     .background {
         position: absolute;
         background-image: url("../../../assets/images/project-managment.jpeg");
@@ -31,12 +31,6 @@
         width: 45vw;
         height: 80vh;
         margin-left: 20px;
-        @media (max-width: 1200px) {
-            .login-form {
-                position: absolute;
-                left: 0;
-            }
-        }         
     }
 
     .register {
@@ -56,9 +50,9 @@
         @media (max-width: 1600px) {
             width: 30vw;
         }
-         @media (max-width: 1200px) {
+         @media (max-width: 1250px) {
             width: 25vw;
-            margin-right: 0;
+            margin-right: 30px;
             justify-content: flex-start;
         }       
         .text-1 {
@@ -104,6 +98,7 @@
                 font-size: 1.3rem;
                 letter-spacing: 1px;
                 text-align: center;
+                padding: 20px;
                 @media (max-width: 1600px) {
                         font-size: 1rem;
                 }

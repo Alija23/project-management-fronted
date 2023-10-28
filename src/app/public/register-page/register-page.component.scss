@@ -1,0 +1,185 @@
+@import 'src/app/global/mixins/mixins.scss';
+
+.registration-page {
+    
+    background-image: url("../../../assets/images/project-managment.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    background-color: gray;
+    background-blend-mode: multiply;
+    background-color: rgb(50, 40,20 );
+
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap; 
+    .page-form {
+        display: flex;
+        flex-flow: column; 
+        align-items: center;
+        width: 100%;
+        & div:nth-child(n) {
+            margin-top: 50px;
+        }
+        
+        .header {
+            font-size: 2.7rem;
+            letter-spacing: 0.4rem;
+            font-style: normal;
+            margin-top: 4rem;
+            text-align: center
+        }
+
+       .username {
+        @include formInputField();
+        position: relative;
+            .error {
+                @include registerErrorHandler();
+            }   
+        } 
+
+        .password {
+            @include formInputField();  
+            position: relative;
+            .error {
+                @include registerErrorHandler();
+            }
+        }
+
+        .confirm-password{
+            @include formInputField();
+            position: relative;
+            .error {
+                @include registerErrorHandler();
+            }
+        }
+        
+
+        .email {
+            @include formInputField();
+            position: relative;
+            .error {
+                @include registerErrorHandler();
+            }
+        }
+
+        .role {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 30px;
+            justify-content: center;
+            position: relative;
+            .error {
+                @include registerErrorHandler();
+                top: -5px;
+            }
+ 
+            label {
+                display: flex;
+                cursor: pointer;
+                font-weight: 500;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 0.375em;
+                width: 7rem; 
+              }
+              label input {
+                position: absolute;
+                left: -9999px;
+              }
+              label input:checked + span {
+                background-color: rgb(100, 40,20 );
+              }
+              label input:checked + span:before {
+                box-shadow: inset 0 0 0 0.4375em #00005c;
+              }
+              label span {
+                display: flex;
+                align-items: center;
+                padding: 0.375em 0.75em 0.375em 0.375em;
+                border-radius: 99em;
+                transition: 0.25s ease;
+              }
+              label span:hover {
+                background-color: rgb(50, 40,20 );
+              }
+              label span:before {
+                display: flex;
+                flex-shrink: 0;
+                content: "";
+                background-color: #fff;
+                width: 1.5em;
+                height: 1.5em;
+                border-radius: 50%;
+                margin-right: 0.375em;
+                transition: 0.25s ease;
+                box-shadow: inset 0 0 0 0.125em #00005c;
+              }
+        }
+        
+        .button {
+            width: 100%;
+            display: flex;
+            margin-top: 10px; 
+            margin-bottom: 4px;
+            button {
+                display: inline-block;
+                padding: .75rem 1.25rem;
+                border: 3px solid black;
+                border-radius: 1rem;
+                color: white;
+                text-transform: uppercase;
+                font-size: 1rem;
+                letter-spacing: .15rem;
+                transition: all .3s;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                width: 40%;
+                margin: auto;
+                background-color: red;
+                margin-bottom: 2rem; 
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: black;
+                    border-radius: 10rem;
+                    z-index: -2;
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 100%;
+                    background-color: darken(white, 15%);
+                    transition: all .3s;
+                    border-radius: 10rem;
+                    z-index: -1;
+                }
+                &:hover {
+                    color: black;
+                    font-weight: 500;
+                    &:before {
+                    width: 100%;
+                    }
+                }
+                &:active {
+                    background-color: darken(blue, 15%);
+                    padding: 10px;
+                }
+            } 
+                
+        }
+ 
+    }
+}
+

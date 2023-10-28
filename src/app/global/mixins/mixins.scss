@@ -1,0 +1,63 @@
+@mixin registerErrorHandler() {
+     position: absolute;
+                display: flex;
+                top: 20px;
+                left: 0;
+                width: 100%;
+                color: red;
+                font-size: 1.4rem;
+                letter-spacing: 0.14rem;
+                font-style: normal;
+                text-align: center;
+                span {
+                    display: inline-block;
+                    width: 10%; 
+                    font-size: 1rem;
+                    box-sizing: border-box;
+                    padding: 4px;
+                    margin-right: 1rem;
+                    border: 3px solid red;
+                    border-radius: 40px;
+                }
+}
+@mixin formInputField() {
+        width: 100%;
+                label, input {
+                    display: block;
+                    padding-right: 76px;
+                    width: 100%;
+                    box-sizing: border-box;                    
+                    margin: auto;
+                    height: 30px;
+                }
+                
+                input {
+                    border: none;
+                    background: none;
+                    outline: none;
+                    border-bottom: 3px solid red;
+                    border-bottom-right-radius: 8px; 
+                    border-end-start-radius: 10px; 
+                    color: white;                
+                    font-size: 1.4rem;            
+                    transition: 0.8s;        
+                        &:focus:valid {
+                            border-bottom: 3px solid green;
+                        }      
+                        &:focus:invalid {
+                            border-bottom: 3px solid red;
+                        }
+                        &::placeholder {
+                            color: white;
+                            font-size: 1.3rem;
+                            padding-left: 30%;
+    
+                        }
+                    &:required:valid {
+                        border-bottom: 3px solid green;
+                    }
+                    
+                }
+ 
+
+}

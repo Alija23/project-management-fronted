@@ -1,10 +1,10 @@
 <div class="login-page">
     <div class="background"></div>
-    <div class="login-form">
+    <div class="login-form" *ngIf="!getModalDisplay()">
         <app-login-form></app-login-form>        
     </div>
    
-    <div class="register">
+    <div class="register" *ngIf="showDiv && !getModalDisplay()" >
         <div class="text-1">
             <h1>Ideas</h1>
         </div>
@@ -15,8 +15,11 @@
             <p>Get started using a simplified management system that does this and that and some other things now.</p>
         </div>
         <div class="button">
-            <button type="button">Register</button>
+            <button type="button" (click)="openRegisterPage()">Register</button>
         </div>
     </div>
 
+
 </div>
+
+<app-register-page-modal></app-register-page-modal>

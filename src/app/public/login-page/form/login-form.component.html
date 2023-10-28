@@ -1,7 +1,7 @@
 <div class="login-form">
     <div class="header">Login</div> 
     <div class="form-data"> 
-      <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <form #loginForm="ngForm" (ngSubmit)="loginUser()">
           <div class="username">
             <label for="username"></label> 
             <input type="text" id="username" name="username" placeholder="Enter Your Username" [(ngModel)]="loginFormsModel.username" minlength="2" required>
@@ -13,6 +13,9 @@
           <div class="button">
             <button type="submit">Submit</button>
           </div>
-          </form>
+          <div class="button" *ngIf="showDiv">
+              <button type="button" (click)="openRegisterPage()">Register</button>
+          </div>
+      </form>
     </div>
 </div>

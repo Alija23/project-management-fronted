@@ -21,7 +21,8 @@
         box-shadow: none;
         border: none;
         margin-top: 10px;
-    }
+        gap: 0px;
+            } 
 
     .header {
         font-size: 2.7rem;
@@ -144,6 +145,7 @@
                     width: 30%;
                     margin: auto;
                     background-color: red;
+                    margin-bottom: 2rem; 
                     &:after {
                         content: '';
                         position: absolute;

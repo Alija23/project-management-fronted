@@ -1,1 +1,44 @@
-<p>register-page works!</p>
+<div class="registration-page">
+    <div class="page-form">
+        <form #loginForm="ngForm" (ngSubmit)="registerUser()">
+            <div class="header">Register</div>
+            <div class="username">
+                <label for="username"></label> 
+                <input type="text" id="username" name="username" placeholder="Enter Your Username" [(ngModel)]="registerPageModel.username" minlength="2" required>
+                <div class="error" *ngIf="isErrorResponse.username !== '' "><span >&times;</span>{{isErrorResponse.username}}</div>
+            </div>
+            <div class="password">
+                <label for="password"></label>
+                <input type="password" placeholder="Enter Your Password" name="password" [(ngModel)]="registerPageModel.password" minlength="2" required>
+            </div>
+            <div class="confirm-password">
+                <label for="confirm-password"></label>
+                <input type="password" placeholder="Confirm Password" name="confirm-password" [(ngModel)]="registerPageModel.confirmPassword" minlength="2" required>
+                <div class="error"><span >&times;</span>Username Not Found</div>
+            </div>
+             <div class="email">
+                <label for="email"></label>
+                <input type="email" placeholder="Enter Your Email" name="email" [(ngModel)]="registerPageModel.email" minlength="2" required>
+                <div class="error"><span >&times;</span>Username Not Found</div>
+            </div>        
+            <div class="role"> 
+                <label>    
+                    <input id="user" type="radio" name="role" value="USER" [(ngModel)]="registerPageModel.userRole.title"> 
+                    <span>USER</span>
+                </label>
+                <label> 
+                    <input id="admin" type="radio" name="role" value="ADMIN"[(ngModel)]="registerPageModel.userRole.title" > 
+                    <span>ADMIN</span> 
+                </label>
+                <div class="error"><span >&times;</span>Username Not Found</div>
+            </div>
+            
+            <div class="button">
+                <button type="submit" >Submit</button>
+            </div> 
+
+        </form>
+    </div>
+</div>
+    
+    

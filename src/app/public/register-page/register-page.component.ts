@@ -1,24 +1,15 @@
 import { Component, Input } from '@angular/core';
-import { RegisterFormModel } from './model/register-form-model';
+import { RegisterFormModel } from '../model/register-form-model';
 import { PublicService } from '../service/public.service';
 import { ModalService } from '../modal/modal-service';
-
+import { ErrorResponseModel, InputStatus } from '../model/error-model';
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.scss']
 })
 export class RegisterPageComponent {
-  isErrorResponse:  RegisterFormModel = {
-    username: "dag",
-    password: "",
-    confirmPassword: "",
-    email: "",
-    userRole: {
-      title: ""
-    }
-  };
-
+ 
   registerPageModel: RegisterFormModel = {
     username: "",
     password: "",
@@ -29,11 +20,21 @@ export class RegisterPageComponent {
     }
   };
 
+  inputStatus: { [key: string]: InputStatus } = {
+    username: { errorMessage: '', status: false },
+    password: { errorMessage: '', status: false },
+    email: { errorMessage: '', status: false },
+    title: { errorMessage: '', status: false }
+  };
+ 
+
   constructor(public publicService: PublicService, public modalService: ModalService) {
 
   }
 
   registerUser() {
-    this.publicService.registerUser(this.registerPageModel, this.isErrorResponse);
+    this.publicService.registerUser(this.registerPageModel, this.inputStatus);
+    
   }
+
 }

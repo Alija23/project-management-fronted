@@ -1,11 +1,14 @@
 <div class="registration-page">
-    <div class="page-form">
+    <div class="page-form" >
         <form #loginForm="ngForm" (ngSubmit)="registerUser()">
             <div class="header">Register</div>
-            <div class="username">
+            <div class="username" >
                 <label for="username"></label> 
                 <input type="text" id="username" name="username" placeholder="Enter Your Username" [(ngModel)]="registerPageModel.username" minlength="2" required>
-                <div class="error" *ngIf="isErrorResponse.username !== '' "><span >&times;</span>{{isErrorResponse.username}}</div>
+                <div class="error" *ngIf="inputStatus['username'].status">
+                    <span >&times;</span>
+                    {{inputStatus['username'].errorMessage}}
+                </div>
             </div>
             <div class="password">
                 <label for="password"></label>
@@ -14,12 +17,18 @@
             <div class="confirm-password">
                 <label for="confirm-password"></label>
                 <input type="password" placeholder="Confirm Password" name="confirm-password" [(ngModel)]="registerPageModel.confirmPassword" minlength="2" required>
-                <div class="error"><span >&times;</span>Username Not Found</div>
+                <div class="error" *ngIf="inputStatus['password'].status">
+                    <span >&times;</span>
+                    {{inputStatus['password'].errorMessage}}
+                </div>
             </div>
              <div class="email">
                 <label for="email"></label>
                 <input type="email" placeholder="Enter Your Email" name="email" [(ngModel)]="registerPageModel.email" minlength="2" required>
-                <div class="error"><span >&times;</span>Username Not Found</div>
+                <div class="error" *ngIf="inputStatus['email'].status">
+                    <span >&times;</span>
+                    {{inputStatus['email'].errorMessage}}                    
+                </div>
             </div>        
             <div class="role"> 
                 <label>    
@@ -30,7 +39,10 @@
                     <input id="admin" type="radio" name="role" value="ADMIN"[(ngModel)]="registerPageModel.userRole.title" > 
                     <span>ADMIN</span> 
                 </label>
-                <div class="error"><span >&times;</span>Username Not Found</div>
+                <div class="error" *ngIf="inputStatus['title'].status">
+                    <span >&times;</span> 
+                    {{inputStatus['title'].errorMessage}}                    
+                </div>
             </div>
             
             <div class="button">

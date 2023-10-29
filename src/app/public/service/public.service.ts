@@ -4,7 +4,8 @@ import { HttpClient, HttpContext, HttpHeaders, HttpParams} from '@angular/common
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import { LoginFormModel } from '../login-page/form/model/login-form-model';
-import { RegisterFormModel } from '../register-page/model/register-form-model';
+import { RegisterFormModel } from '../model/register-form-model';
+import { ErrorResponseModel, InputStatus, StatusField } from '../model/error-model';
 
 @Injectable(
   { providedIn: 'root'}
@@ -39,23 +40,46 @@ export class PublicService {
     );
   }
 
-  registerUser(registerForm: RegisterFormModel, isErrorResponse: RegisterFormModel) {   
+  registerUser(registerForm: RegisterFormModel, status: { [key: string]: InputStatus } ) {   
     this.http.post(this.registerUrl, registerForm, this.httpOptionsJson).subscribe(
        {
         next: (data) => {
-          isErrorResponse= data as RegisterFormModel;
 
         }
       , error: (err) => {
-        isErrorResponse.username = err.fieldName;
-        isErrorResponse.password = err.password;
-        isErrorResponse.confirmPassword = err.confirmPassword;
-        isErrorResponse.email = err.email;
-        isErrorResponse.userRole.title = err.userRole.title;
-      }
+          for (const statusField of err.error.status) {
+            if (statusField.fieldName === 'username') {
+              status['username'] = {
+                status: true,
+                errorMessage: statusField.errorMessage
+              }
+            
+                console.log(status['username']);
+            }
+            if (statusField.fieldName === 'password') {
+              status['password'] = {
+                  status: true,
+                  errorMessage: statusField.errorMessage
+              };
+            }
+            if (statusField.fieldName === 'email') {
+              status['email'] = {
+                  status: true,
+                  errorMessage: statusField.errorMessage
+              };
+            
+            }
+            if (statusField.fieldName === 'title') {
+              status['title'] = {
+                  status: true,
+                  errorMessage: statusField.errorMessage
+              };
+            
+            }
+          }
+        }
       }
     );
-
-     } 
+  } 
 }
 

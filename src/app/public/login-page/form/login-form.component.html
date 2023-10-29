@@ -5,10 +5,19 @@
           <div class="username">
             <label for="username"></label> 
             <input type="text" id="username" name="username" placeholder="Enter Your Username" [(ngModel)]="loginFormsModel.username" minlength="2" required>
+              <div class="error" *ngIf="inputStatus['username'].status">
+                  <span >&times;</span>
+                  {{inputStatus['username'].errorMessage}}
+              </div>
+ 
           </div>
           <div class="password">
             <label for="password"></label>
             <input type="password" placeholder="Enter Your Password" name="password" [(ngModel)]="loginFormsModel.password" minlength="2" required>
+             <div class="error" *ngIf="inputStatus['password'].status">
+                  <span >&times;</span>
+                  {{inputStatus['password'].errorMessage}}
+              </div> 
           </div>
           <div class="button">
             <button type="submit">Submit</button>

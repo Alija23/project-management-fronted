@@ -33,8 +33,17 @@ export class RegisterPageComponent {
   }
 
   registerUser() {
+    this.resetInputStatus();
     this.publicService.registerUser(this.registerPageModel, this.inputStatus);
     
   }
-
+  resetInputStatus() {
+    this.inputStatus = {
+      username: { errorMessage: '', status: false },
+      password: { errorMessage: '', status: false },
+      email: { errorMessage: '', status: false },
+      title: { errorMessage: '', status: false }
+    };
+ 
+  }
 }

@@ -6,7 +6,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ModalService {
-  private display: boolean = true;
+  private display: boolean = false;
 
   open(): boolean {
     return this.display = true;

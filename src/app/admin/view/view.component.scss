@@ -1,0 +1,48 @@
+@import '../../global/mixins/admin-mixins/mixins.scss';
+
+.view {
+    min-width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    display: flex; 
+    box-sizing: border-box;
+
+    .menu {
+        @include box-model-view;
+        min-width: 20vw;
+        min-height: 99vh;
+        max-width: 20vw;
+        max-height: 99vh; 
+        padding: 0.4rem;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        .header {
+            @include box-model-view;
+            min-width: 79vw;
+            min-height: 20vh;
+            max-height: 20vh;
+            max-width: 79vw;
+            @media (max-width: 1200px) {
+                min-width: 78.6vw;
+                max-width: 78.6vw;    
+            }
+        }
+
+        .workspace {
+            @include box-model-view;
+            max-width: 79.2vw;
+            max-height: 78vh;
+            min-width: 79.2vw;
+            min-height: 78vh;
+            @media (max-width: 1200px) {
+                min-width: 78.6vw;
+                max-width: 78.6vw;    
+            }
+ 
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AdminService } from '../service/admin.service';
 
@@ -14,9 +15,7 @@ import { TaskManagmentComponent } from '../workspace/task-managment/task-managme
 import { TaskBoardComponent } from '../task-board/task-board.component';
 import { TaskComponent } from '../task-board/task/task.component';
 import { UserProfileComponent} from '../user-profile/user-profile.component';
-
-
-
+import { SearchBarComponent } from '../user-profile/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +27,15 @@ import { UserProfileComponent} from '../user-profile/user-profile.component';
     TaskManagmentComponent,
     TaskBoardComponent,
     TaskComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    SearchBarComponent    
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule
   ]
 })
-export class AdminModule { }
+export class AdminModule {
+
+ }

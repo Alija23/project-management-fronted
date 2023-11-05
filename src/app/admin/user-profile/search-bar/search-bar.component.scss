@@ -1,0 +1,82 @@
+.search-bar {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 1rem;
+    .search-icon {
+        .search-icon-fa {
+            position: absolute;
+            z-index: 1;
+            top: 1.3rem;
+            left: 23rem;
+            font-weight: 500;
+            font-size: 1.5rem;
+        }
+    } 
+    .input {
+        width: 80%;
+        position: relative;
+        input {
+            width: 100%;
+            height: 2rem;
+            border: 3px solid darkred;
+            border-radius: 1rem; 
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: darkred;
+            padding: .2rem; 
+            &::placeholder {
+                font-size: 1.5rem;
+                text-align: center;
+                color: darkred;
+            }
+        }
+    }    
+    .results {
+        border-left: 3px solid darkred;
+        border-bottom: 3px solid darkred;
+        border-right: 3px solid darkred;
+        width: 90%;
+        background-color: black;
+        color: white;
+        border-radius: 30px; 
+        z-index: 3;
+        ul {
+            list-style: none;
+            li {
+                border-left: 3px solid darkred;
+                border-bottom: 3px solid darkred;
+                border-right: 3px solid darkred;
+                width: 96%;
+                border-radius: 30px; 
+                z-index: 3;
+                font-size: 1.4rem; 
+                margin-bottom: .4rem; 
+                font-weight: 600;
+                padding-left: .7rem;
+                &:hover {
+                    background-color: white;
+                }
+                button {
+                    background: none;
+                    border: none;
+                    margin: 0;
+                    padding: 0;
+                    font: inherit;
+                    color: inherit;
+                    cursor: pointer;
+                    width: 100%;
+                    font-size: 1.4rem; 
+                    color: white;
+                    text-align: left;
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+            
+        }
+    }
+
+}

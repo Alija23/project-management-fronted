@@ -1,0 +1,6 @@
+@import '../../../global/mixins/admin-mixins/mixins.scss';
+
+.user-management {
+    @include box-model-view-position;
+    background-color: black;
+}

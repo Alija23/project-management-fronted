@@ -1,0 +1,13 @@
+<div class="search-bar">
+    <div class="search-icon" *ngIf="searchTerm.length === 0">
+        <i class="fa fa-search search-icon-fa" aria-hidden="true"></i>
+    </div>
+    <div class="input">
+        <input [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search">
+    </div>
+    <div class="results">
+        <ul *ngIf="searchResults.length > 0">
+            <li *ngFor="let result of searchResults"><button (click)="onClickList()">{{result}}</button></li>
+        </ul>
+    </div>
+</div>

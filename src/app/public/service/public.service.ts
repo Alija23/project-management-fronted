@@ -33,7 +33,7 @@ export class PublicService {
     this.http.post(this.loginUrl, body.toString(),  this.httpOptionsurlencoded).subscribe(
       {
         next: (data) => {
-          
+          this.router.navigateByUrl("/admin");          
         }
       , error: (err) => {
           

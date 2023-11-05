@@ -7,11 +7,13 @@ import { TaskManagmentComponent } from '../workspace/task-managment/task-managme
 
 const adminRoutes: Routes = [
   {
-    path: "/admin", component: ViewComponent, 
+    path: '',
+    component: ViewComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent},
-      { path: 'user-management', component: UserManagmentComponent},
-      { path: 'task-management', component: TaskManagmentComponent},
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent, data: { searchType: 'Dashboard' } },
+      { path: 'user-management', component: UserManagmentComponent, data: { searchType: 'User' }},
+      { path: 'task-management', component: TaskManagmentComponent, data: { searchType: 'Task' }},
     ],
   }
 ];

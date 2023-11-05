@@ -1,0 +1,5 @@
+@import '../../global/mixins/admin-mixins/mixins.scss';
+
+.workspace {
+    @include box-model-view-position;
+}

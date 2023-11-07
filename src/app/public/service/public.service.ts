@@ -7,14 +7,13 @@ import { LoginFormModel } from '../model/login-form-model';
 import { RegisterFormModel } from '../model/register-form-model';
 import { ErrorResponseModel, InputStatus, StatusField } from '../model/error-model';
 import { ModalService } from '../modal/modal-service';
+import { UserModel } from '../model/user-model';
 
-@Injectable(
-  { providedIn: 'root'}
-)
+@Injectable()
 export class PublicService {
   private loginUrl= 'http://localhost:4200/api/login';
   private registerUrl= 'http://localhost:4200/api/guest/save-user';
-
+  
   httpOptionsurlencoded = {
     headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'),
   }
@@ -22,7 +21,13 @@ export class PublicService {
   httpOptionsJson = {
     headers: new HttpHeaders().set('Content-Type', 'application/json')
   }
-  
+ 
+  user: UserModel = {
+    username: "",
+    email: "",
+    role: "",
+    id: 0
+  }
   constructor(private http: HttpClient, private router: Router, private modalService: ModalService) { }
   
   loginUser(myForm: LoginFormModel, status: { [key: string]: InputStatus }) {
@@ -33,6 +38,8 @@ export class PublicService {
     this.http.post(this.loginUrl, body.toString(),  this.httpOptionsurlencoded).subscribe(
       {
         next: (data) => {
+          this.user = data as UserModel;
+          console.log(this.user);
           this.router.navigateByUrl("/admin");          
         }
       , error: (err) => {

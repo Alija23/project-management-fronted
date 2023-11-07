@@ -16,6 +16,7 @@ import { TaskBoardComponent } from '../task-board/task-board.component';
 import { TaskComponent } from '../task-board/task/task.component';
 import { UserProfileComponent} from '../user-profile/user-profile.component';
 import { SearchBarComponent } from '../user-profile/search-bar/search-bar.component';
+import { UserInformationComponent } from '../user-profile/user-information/user-information.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SearchBarComponent } from '../user-profile/search-bar/search-bar.compon
     TaskBoardComponent,
     TaskComponent,
     UserProfileComponent,
-    SearchBarComponent    
+    SearchBarComponent,
+    UserInformationComponent    
   ],
   imports: [
     CommonModule,

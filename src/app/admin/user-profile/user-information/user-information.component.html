@@ -1,0 +1,16 @@
+<div class="user-information">
+    <button *ngIf="!statusInfoUser" (click)="openUserInfo()" class="user-icon">
+        <i class="fa fa-user-circle-o user-info-fa" aria-hidden="true"></i>
+    </button>
+    <button  *ngIf="!statusInfoUser"(click)="openNotifications()" class="notifications"> 
+        <i class="fa fa-bell bell" aria-hidden="true"></i>
+    </button>
+    
+    <div class="info" *ngIf="statusInfoUser">
+        <button (click)="closeUserInfo()"><i class="fa fa-window-close" aria-hidden="true"></i></button>
+        <div class="username">Username: {{returnUsername()}}</div>
+        <div class="email">Email: Dilo2304@live.com</div>
+        <div class="role">Role: ADMIN</div>
+        <div class="id">Id: 1</div>
+    </div>
+</div>

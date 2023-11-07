@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -8,7 +9,11 @@ import { Component } from '@angular/core';
 export class SearchBarComponent {
   searchTerm: string = "";
   searchType: string = "";
-  searchResults: string[] = ["dilo", "tarik"];
+  searchResults: string[] = [];
+
+  constructor(private router: Router) {
+    
+  }
 
   onSearch() {
 

@@ -29,6 +29,7 @@ import { RegisterPageModalComponent } from '../modal/register-page-modal/registe
     CommonModule,
   ],
   providers: [
+    PublicModule
   ]
   
 })

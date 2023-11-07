@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test/test.component';
 import { NotFoundComponent } from './page-not-found/not-found.component';
-
+import { PublicService } from './public/service/public.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +20,7 @@ import { NotFoundComponent } from './page-not-found/not-found.component';
     HttpClientModule,
 
   ],
-  providers: [],
+  providers: [PublicService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

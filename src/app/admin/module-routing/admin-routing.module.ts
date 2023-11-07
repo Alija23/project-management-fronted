@@ -11,9 +11,9 @@ const adminRoutes: Routes = [
     component: ViewComponent,
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent, data: { searchType: 'Dashboard' } },
-      { path: 'user-management', component: UserManagmentComponent, data: { searchType: 'User' }},
-      { path: 'task-management', component: TaskManagmentComponent, data: { searchType: 'Task' }},
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'user-management', component: UserManagmentComponent },
+      { path: 'task-management', component: TaskManagmentComponent },
     ],
   }
 ];

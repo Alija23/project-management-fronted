@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PublicService } from 'src/app/public/service/public.service';
 
 @Component({
   selector: 'app-user-profile-component',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent{
-
+  
 }

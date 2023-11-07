@@ -4,9 +4,10 @@
     </div>
     <div class="input">
         <input [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search">
+        {{searchType}}
     </div>
-    <div class="results">
-        <ul *ngIf="searchResults.length > 0">
+    <div class="results" *ngIf="searchResults.length > 0">
+        <ul >
             <li *ngFor="let result of searchResults"><button (click)="onClickList()">{{result}}</button></li>
         </ul>
     </div>

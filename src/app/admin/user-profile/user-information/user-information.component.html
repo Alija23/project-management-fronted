@@ -9,8 +9,8 @@
     <div class="info" *ngIf="statusInfoUser">
         <button (click)="closeUserInfo()"><i class="fa fa-window-close" aria-hidden="true"></i></button>
         <div class="username">Username: {{returnUsername()}}</div>
-        <div class="email">Email: Dilo2304@live.com</div>
-        <div class="role">Role: ADMIN</div>
-        <div class="id">Id: 1</div>
+        <div class="email">Email: {{returnEmail()}}</div>
+        <div class="role">Role: {{returnRole()}}</div>
+        <div class="id">Id: {{returnId()}}</div>
     </div>
 </div>

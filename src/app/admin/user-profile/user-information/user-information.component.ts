@@ -6,7 +6,7 @@ import { PublicService } from 'src/app/public/service/public.service';
   styleUrls: ['./user-information.component.scss']
 })
 export class UserInformationComponent {
-  statusInfoUser: boolean = true;
+  statusInfoUser: boolean = false;
  
   constructor(private publicService: PublicService) {
 
@@ -33,9 +33,9 @@ export class UserInformationComponent {
         return this.publicService.user.email;
     }
   returnRole() {
-      return this.publicService.user.role.toUpperCase();
+      return this.publicService.user.role.title;
   }
   returnId() {
-      return this.publicService.user.id;
+      return this.publicService.user.rid;
   }
 }

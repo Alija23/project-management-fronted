@@ -25,8 +25,10 @@ export class PublicService {
   user: UserModel = {
     username: "",
     email: "",
-    role: "",
-    id: 0
+    role: {
+      title: ""
+    },
+    rid: 0
   }
   constructor(private http: HttpClient, private router: Router, private modalService: ModalService) { }
   
@@ -39,7 +41,6 @@ export class PublicService {
       {
         next: (data) => {
           this.user = data as UserModel;
-          console.log(this.user);
           this.router.navigateByUrl("/admin");          
         }
       , error: (err) => {

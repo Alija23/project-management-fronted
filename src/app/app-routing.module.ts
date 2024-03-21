@@ -7,7 +7,7 @@ import { ViewComponent } from './admin/view/view.component';
 const routes: Routes = [
   { path: 'admin', loadChildren: () => import('./admin/module-routing/admin.module').then((m) => m.AdminModule),},
   { path: 'login-page', component: LoginPageComponent, loadChildren: () => import('./public/module-routing/public.module').then((m) => m.PublicModule), },
-  { path: '', redirectTo: 'admin', pathMatch: 'full' },
+  { path: '', redirectTo: 'login-page', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];
 

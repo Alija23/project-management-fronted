@@ -3,4 +3,16 @@
 .dashboard {
     @include box-model-view-position;
     background-color: red;
+    display: flex; 
+    .to-do {
+        width: 50%;
+        height: 100%; 
+        background-color: blue;
+    }
+
+    .done {
+        width: 50%;
+        background-color: yellow;
+        height: 100%; 
+    }
 }

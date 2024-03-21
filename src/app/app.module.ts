@@ -24,3 +24,5 @@ import { PublicService } from './public/service/public.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// playing around
